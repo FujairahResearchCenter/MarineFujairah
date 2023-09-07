@@ -1,0 +1,37 @@
+{
+  "name": "devfest2022",
+  "description": "Website for Google DevFest 2022 Mauritius",
+  "demo": "https://devfest.mscc.mu/",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Mauritius Software Craftsmanship Community",
+    "email": "hello@mscc.mu",
+    "url": "https://www.mscc.mu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mscraftsman/devfest2022.git"
+  },
+  "bugs": "https://github.com/mscraftsman/devfest2022/issues",
+  "contributors": [
+    "https://github.com/mscraftsman/devfest2022/graphs/contributors"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "postscribe": "^2.0.8",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.2",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1",
+    "vite": "^3.1.8"
+  }
+}

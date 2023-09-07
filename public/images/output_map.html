@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aad85ac5211d885e074616f435999045 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_aad85ac5211d885e074616f435999045" ></div>
+        
+</body>
+<script>
+
+    
+            var map_aad85ac5211d885e074616f435999045 = L.map(
+                "map_aad85ac5211d885e074616f435999045",
+                {
+                    center: [25.46672345660192, 56.35169366193888],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_39c7ad8540b231bbb433d016f1b6218a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_aad85ac5211d885e074616f435999045);
+        
+    
+        function geo_json_f973cb3bed4669e3c81434d6ea60cd9a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillColor": "blue", "fillOpacity": 0.3};
+            }
+        }
+
+        function geo_json_f973cb3bed4669e3c81434d6ea60cd9a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_f973cb3bed4669e3c81434d6ea60cd9a = L.geoJson(null, {
+                onEachFeature: geo_json_f973cb3bed4669e3c81434d6ea60cd9a_onEachFeature,
+            
+                style: geo_json_f973cb3bed4669e3c81434d6ea60cd9a_styler,
+        });
+
+        function geo_json_f973cb3bed4669e3c81434d6ea60cd9a_add (data) {
+            geo_json_f973cb3bed4669e3c81434d6ea60cd9a
+                .addData(data)
+                .addTo(map_aad85ac5211d885e074616f435999045);
+        }
+            geo_json_f973cb3bed4669e3c81434d6ea60cd9a_add({"features": [{"geometry": {"coordinates": [[[56.37059057257434, 25.42863763034277, 0], [56.370043651246284, 25.428635286562567, 0], [56.37003808339502, 25.428529528727584, 0], [56.370035950699815, 25.42846557929188, 0], [56.37008263802967, 25.428424805717658, 0], [56.37010741506371, 25.42831500600359, 0], [56.37010070613403, 25.42821392183245, 0], [56.370068040447535, 25.42810794307567, 0], [56.37001332912254, 25.42805617123083, 0], [56.36994601480343, 25.427992880556317, 0], [56.36982640119989, 25.427962456816626, 0], [56.369724619797694, 25.427965254900673, 0], [56.3696483183935, 25.427952568834858, 0], [56.36955672662786, 25.427843974864867, 0], [56.369499989388835, 25.427811433931172, 0], [56.3694958480589, 25.42778555360497, 0], [56.369454749085826, 25.427746512074847, 0], [56.36931744157225, 25.4277725691802, 0], [56.36922953292451, 25.427816537454238, 0], [56.36913616474546, 25.427842573499237, 0], [56.36907766213748, 25.42788726482549, 0], [56.368923041820345, 25.42792625615715, 0], [56.368800636058324, 25.427933662543193, 0], [56.36855239529271, 25.42797794755545, 0], [56.36849146820538, 25.427966887380492, 0], [56.3684007786868, 25.427958400192615, 0], [56.36833081732723, 25.427968895988208, 0], [56.368287626098564, 25.42797950864728, 0], [56.36819390605364, 25.42798180483474, 0], [56.36817457705045, 25.42798037170509, 0], [56.36817022174956, 25.427960108126342, 0], [56.368167380226254, 25.427934452790776, 0], [56.36816308727912, 25.427902041124128, 0], [56.36816322802995, 25.42787504859403, 0], [56.36816489862323, 25.42783996434023, 0], [56.36814860117197, 25.427827747711227, 0], [56.368124809342966, 25.42782629628786, 0], [56.36810674979628, 25.42786670832952, 0], [56.368071827316264, 25.4279043694854, 0], [56.36800837188329, 25.42790677403567, 0], [56.36797578909301, 25.427879640757748, 0], [56.36791503107355, 25.427836190574983, 0], [56.367802956052905, 25.427901406887848, 0], [56.36775677339112, 25.427909581003043, 0], [56.367724674998335, 25.427871764295066, 0], [56.36765786342924, 25.427854730249443, 0], [56.367644028548185, 25.427845496911065, 0], [56.36759384115798, 25.427842090544157, 0], [56.367502427023894, 25.427938162406914, 0], [56.36741241340645, 25.428014324992514, 0], [56.367370077386354, 25.4280324472969, 0], [56.36732588535996, 25.42804644679683, 0], [56.36727802628989, 25.42805708374052, 0], [56.3672293348907, 25.428063930371586, 0], [56.36718017448042, 25.42806693560297, 0], [56.36711619780386, 25.428066136598762, 0], [56.36705246983557, 25.42806095689757, 0], [56.36698935381174, 25.428051426022733, 0], [56.366920936798394, 25.428038667759093, 0], [56.366510780759945, 25.427962181312594, 0], [56.36558131049612, 25.427776281857227, 0], [56.3654959643439, 25.427648824121086, 0], [56.36541686378257, 25.42751808615716, 0], [56.36534416138363, 25.427384320170855, 0], [56.36527799737454, 25.42724778420805, 0], [56.36521849936833, 25.42710874165722, 0], [56.3651657821176, 25.42696746074135, 0], [56.36511994729329, 25.426824214000412, 0], [56.36508108328873, 25.426679277765633, 0], [56.36498674847801, 25.42630234007126, 0], [56.3648869603945, 25.42592656220174, 0], [56.36478173636605, 25.42555200921802, 0], [56.36467109466116, 25.425178745968378, 0], [56.364555054485855, 25.424806837077224, 0], [56.36443363598022, 25.424436346933856, 0], [56.36437011855916, 25.424247097686326, 0], [56.36421636665952, 25.424074165764207, 0], [56.36420967186096, 25.424057977219704, 0], [56.364120743922705, 25.424003580897253, 0], [56.36410726185985, 25.42387929290809, 0], [56.36397459557152, 25.423477115963077, 0], [56.36391180447271, 25.42301556422518, 0], [56.36387569662211, 25.42264991873129, 0], [56.36383527498996, 25.422268812859993, 0], [56.36382404466542, 25.421880431253424, 0], [56.36386436558913, 25.42165700572142, 0], [56.36565086325841, 25.42190727590038, 0], [56.365673480556914, 25.42189903320678, 0], [56.365684821045484, 25.421868497684578, 0], [56.36567599878256, 25.42035857601269, 0], [56.37062574659308, 25.421865111141617, 0], [56.37059057257434, 25.42863763034277, 0]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+        var popup_b7cd347f034ecf152c2cf9bf80570593 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4b6c48ec32a736e24178d6963a537667 = $(`<div id="html_4b6c48ec32a736e24178d6963a537667" style="width: 100.0%; height: 100.0%;"><ul><li><strong>pkPlotCode:</strong> 0425630</li><li><strong>E_zone:</strong> ALBIDIYA</li><li><strong>E_NAME:</strong> ALBIDIYA RESERVE</li><li><strong>A_NAME:</strong> محمية البدية البحرية</li><li><strong>A_ZONE:</strong> البدية</li><li><strong>A_SECTOR:</strong> القطاع الشرقي</li><li><strong>E_SECTOR:</strong> East Sector</li></ul></div>`)[0];
+                popup_b7cd347f034ecf152c2cf9bf80570593.setContent(html_4b6c48ec32a736e24178d6963a537667);
+            
+        
+
+        geo_json_f973cb3bed4669e3c81434d6ea60cd9a.bindPopup(popup_b7cd347f034ecf152c2cf9bf80570593)
+        ;
+
+        
+    
+    
+        function geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillColor": "blue", "fillOpacity": 0.3};
+            }
+        }
+
+        function geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4 = L.geoJson(null, {
+                onEachFeature: geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4_onEachFeature,
+            
+                style: geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4_styler,
+        });
+
+        function geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4_add (data) {
+            geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4
+                .addData(data)
+                .addTo(map_aad85ac5211d885e074616f435999045);
+        }
+            geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4_add({"features": [{"geometry": {"coordinates": [[[56.365437454395384, 25.50711613861711, 0], [56.3647261356784, 25.505155502965245, 0], [56.36753641952946, 25.504235967357566, 0], [56.36824648432041, 25.506197014640577, 0], [56.365437454395384, 25.50711613861711, 0]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+        var popup_1ab99d245b51f39fa8ec1bfe5ce76a70 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_13c081bc358cb2ec58baa2da456307b7 = $(`<div id="html_13c081bc358cb2ec58baa2da456307b7" style="width: 100.0%; height: 100.0%;"><ul><li><strong>pkPlotCode:</strong> 0901022</li><li><strong>E_zone:</strong> ALAQAH</li><li><strong>E_NAME:</strong> LE MERIDIEN MARINE RESERVE</li><li><strong>A_NAME:</strong> محمية خاصة بفندق ومنتجع لي</li><li><strong>A_ZONE:</strong> العقة</li><li><strong>A_SECTOR:</strong> القطاع الشرقي</li><li><strong>E_SECTOR:</strong> East Sector</li></ul></div>`)[0];
+                popup_1ab99d245b51f39fa8ec1bfe5ce76a70.setContent(html_13c081bc358cb2ec58baa2da456307b7);
+            
+        
+
+        geo_json_9d1a7f503b1960c88a27bbcf5e3a7bb4.bindPopup(popup_1ab99d245b51f39fa8ec1bfe5ce76a70)
+        ;
+
+        
+    
+    
+        function geo_json_f205f1cb819f59015c70000840aed1cf_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillColor": "blue", "fillOpacity": 0.3};
+            }
+        }
+
+        function geo_json_f205f1cb819f59015c70000840aed1cf_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_f205f1cb819f59015c70000840aed1cf = L.geoJson(null, {
+                onEachFeature: geo_json_f205f1cb819f59015c70000840aed1cf_onEachFeature,
+            
+                style: geo_json_f205f1cb819f59015c70000840aed1cf_styler,
+        });
+
+        function geo_json_f205f1cb819f59015c70000840aed1cf_add (data) {
+            geo_json_f205f1cb819f59015c70000840aed1cf
+                .addData(data)
+                .addTo(map_aad85ac5211d885e074616f435999045);
+        }
+            geo_json_f205f1cb819f59015c70000840aed1cf_add({"features": [{"geometry": {"coordinates": [[[56.369921474263634, 25.52312792059117, 0], [56.37230990630664, 25.523138170312425, 0], [56.37234321966992, 25.526298528228796, 0], [56.37067399618035, 25.52629136875955, 0], [56.370502634765664, 25.525882080100146, 0], [56.370375964908746, 25.525830904089545, 0], [56.37034542211247, 25.52581857769548, 0], [56.37028897919178, 25.525818151839243, 0], [56.37022583485456, 25.525796483640224, 0], [56.369596406482785, 25.525421458748117, 0], [56.369706376393275, 25.52524907033144, 0], [56.36976603648101, 25.52506872485206, 0], [56.369955569236176, 25.524888937790514, 0], [56.36997144028011, 25.52470840393272, 0], [56.36983056864237, 25.524527196105055, 0], [56.36973796412779, 25.524346195746176, 0], [56.36961735778854, 25.524191262179045, 0], [56.36958564859162, 25.524164938465677, 0], [56.36959405616739, 25.523984372530236, 0], [56.36951922629395, 25.523925354917008, 0], [56.369493516617815, 25.52389363893306, 0], [56.3695195047054, 25.523872078493284, 0], [56.36961898318355, 25.5238801820438, 0], [56.369660682049904, 25.52380405702206, 0], [56.36981892830794, 25.523707212475834, 0], [56.37001773889006, 25.52375141179953, 0], [56.370163695845385, 25.523625617702955, 0], [56.37029950629943, 25.52346513494766, 0], [56.37018466734236, 25.523317817321484, 0], [56.369921474263634, 25.52312792059117, 0]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+        var popup_3a062ef012d901e118492804ff773acb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_553b185fb134736a3bc93f94b7169033 = $(`<div id="html_553b185fb134736a3bc93f94b7169033" style="width: 100.0%; height: 100.0%;"><ul><li><strong>pkPlotCode:</strong> 1017499</li><li><strong>E_zone:</strong> DHADNA</li><li><strong>E_NAME:</strong> DADNA RESERVE</li><li><strong>A_NAME:</strong> محمية ضدنا البحرية</li><li><strong>A_ZONE:</strong> ضدنا</li><li><strong>A_SECTOR:</strong> القطاع الشرقي</li><li><strong>E_SECTOR:</strong> East Sector</li></ul></div>`)[0];
+                popup_3a062ef012d901e118492804ff773acb.setContent(html_553b185fb134736a3bc93f94b7169033);
+            
+        
+
+        geo_json_f205f1cb819f59015c70000840aed1cf.bindPopup(popup_3a062ef012d901e118492804ff773acb)
+        ;
+
+        
+    
+    
+        function geo_json_1d9be9d2d238bdd54decabb09c114012_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillColor": "blue", "fillOpacity": 0.3};
+            }
+        }
+
+        function geo_json_1d9be9d2d238bdd54decabb09c114012_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_1d9be9d2d238bdd54decabb09c114012 = L.geoJson(null, {
+                onEachFeature: geo_json_1d9be9d2d238bdd54decabb09c114012_onEachFeature,
+            
+                style: geo_json_1d9be9d2d238bdd54decabb09c114012_styler,
+        });
+
+        function geo_json_1d9be9d2d238bdd54decabb09c114012_add (data) {
+            geo_json_1d9be9d2d238bdd54decabb09c114012
+                .addData(data)
+                .addTo(map_aad85ac5211d885e074616f435999045);
+        }
+            geo_json_1d9be9d2d238bdd54decabb09c114012_add({"features": [{"geometry": {"coordinates": [[[56.36800761234557, 25.548288073377655, 0], [56.373979938656355, 25.548313726135813, 0], [56.37395179109767, 25.553731652102037, 0], [56.36797919629827, 25.55370599313473, 0], [56.36800761234557, 25.548288073377655, 0]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+        var popup_bdac8539482dcdf9795e9898247ce90c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c1035fac8304cae847f62e7a1d15c7b3 = $(`<div id="html_c1035fac8304cae847f62e7a1d15c7b3" style="width: 100.0%; height: 100.0%;"><ul><li><strong>pkPlotCode:</strong> 1207181</li><li><strong>E_zone:</strong> RUL DHADNA</li><li><strong>E_NAME:</strong> RAS DADNA RESERVE</li><li><strong>A_NAME:</strong> محمية رأس ضدنا</li><li><strong>A_ZONE:</strong> رول ضدنا</li><li><strong>A_SECTOR:</strong> القطاع الشرقي</li><li><strong>E_SECTOR:</strong> East Sector</li></ul></div>`)[0];
+                popup_bdac8539482dcdf9795e9898247ce90c.setContent(html_c1035fac8304cae847f62e7a1d15c7b3);
+            
+        
+
+        geo_json_1d9be9d2d238bdd54decabb09c114012.bindPopup(popup_bdac8539482dcdf9795e9898247ce90c)
+        ;
+
+        
+    
+    
+        function geo_json_693c57fb8f38905d01037e78e27fc5aa_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillColor": "blue", "fillOpacity": 0.3};
+            }
+        }
+
+        function geo_json_693c57fb8f38905d01037e78e27fc5aa_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_693c57fb8f38905d01037e78e27fc5aa = L.geoJson(null, {
+                onEachFeature: geo_json_693c57fb8f38905d01037e78e27fc5aa_onEachFeature,
+            
+                style: geo_json_693c57fb8f38905d01037e78e27fc5aa_styler,
+        });
+
+        function geo_json_693c57fb8f38905d01037e78e27fc5aa_add (data) {
+            geo_json_693c57fb8f38905d01037e78e27fc5aa
+                .addData(data)
+                .addTo(map_aad85ac5211d885e074616f435999045);
+        }
+            geo_json_693c57fb8f38905d01037e78e27fc5aa_add({"features": [{"geometry": {"coordinates": [[[56.36651229283325, 25.49802048567737, 0], [56.362407779968954, 25.498002697719183, 0], [56.362247052431755, 25.49734447267759, 0], [56.36203215115408, 25.496382285144673, 0], [56.36168491437223, 25.49458109704691, 0], [56.36156121041034, 25.49219445775415, 0], [56.36140879213501, 25.491708884091324, 0], [56.36146031281908, 25.491291395980337, 0], [56.36165220601976, 25.491306954877704, 0], [56.361742091727606, 25.491482501787807, 0], [56.3618623827659, 25.491453910218222, 0], [56.361903945637586, 25.491384158049858, 0], [56.36182879729086, 25.491205501262215, 0], [56.36161256097129, 25.491145522158817, 0], [56.36129878607527, 25.491234827766625, 0], [56.36119671012932, 25.491286441073328, 0], [56.361150885107925, 25.491235473163226, 0], [56.361000606555535, 25.491006165577648, 0], [56.360896425611536, 25.49081885197768, 0], [56.36067224670431, 25.49022770956766, 0], [56.36046060351016, 25.489575940742018, 0], [56.36035662764323, 25.489187502108223, 0], [56.36024659608258, 25.488675084792124, 0], [56.36015762766825, 25.48803415020954, 0], [56.36012892978595, 25.48757825134674, 0], [56.36013170599381, 25.486922966096586, 0], [56.36017498334413, 25.486672833959442, 0], [56.36078291098092, 25.484938226675943, 0], [56.361045129788884, 25.48450659935486, 0], [56.361053188642956, 25.484433335872644, 0], [56.3611412819866, 25.484189309637138, 0], [56.361264903695876, 25.484026112434154, 0], [56.36156532100388, 25.483806554479916, 0], [56.361619878703415, 25.483722425048672, 0], [56.36181373461459, 25.48314316465308, 0], [56.361895816264166, 25.482738419367507, 0], [56.36196833337865, 25.482548406341103, 0], [56.36201599665491, 25.482134068433783, 0], [56.36209920721834, 25.481638797920372, 0], [56.36218116277717, 25.48143742431646, 0], [56.362295938846856, 25.48124670621365, 0], [56.36230184451455, 25.481140307960487, 0], [56.36231751210967, 25.48084693773472, 0], [56.362276845167216, 25.48055319983702, 0], [56.36229754445846, 25.480356800057613, 0], [56.36231824267548, 25.480160401167442, 0], [56.362375165000394, 25.480048902241546, 0], [56.36323198149411, 25.480052830962755, 0], [56.36348178324663, 25.47984578792632, 0], [56.36354976299906, 25.479715966451373, 0], [56.36362415858966, 25.479631643198392, 0], [56.36660862018601, 25.479644557076348, 0], [56.36651229283325, 25.49802048567737, 0]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+        var popup_a79054d080083583460b13872562b259 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1d39ef277964c9a28ad8e5a48bc0013a = $(`<div id="html_1d39ef277964c9a28ad8e5a48bc0013a" style="width: 100.0%; height: 100.0%;"><ul><li><strong>pkPlotCode:</strong> 0904027</li><li><strong>E_zone:</strong>  AL AQAH</li><li><strong>E_NAME:</strong> ALAQAH RESERVE</li><li><strong>A_NAME:</strong> محمية العقة البحرية</li><li><strong>A_ZONE:</strong> العقة</li><li><strong>A_SECTOR:</strong> القطاع الشرقي</li><li><strong>E_SECTOR:</strong> East Sector</li></ul></div>`)[0];
+                popup_a79054d080083583460b13872562b259.setContent(html_1d39ef277964c9a28ad8e5a48bc0013a);
+            
+        
+
+        geo_json_693c57fb8f38905d01037e78e27fc5aa.bindPopup(popup_a79054d080083583460b13872562b259)
+        ;
+
+        
+    
+</script>
+</html>

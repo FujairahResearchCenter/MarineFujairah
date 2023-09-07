@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Leaflet Maps</title>
+</head>
+<body>
+    <h1>Combined Leaflet Maps</h1>
+    
+    <!-- Buttons to select maps -->
+    <button onclick="loadMap('output_map.html')">Load Map 1</button>
+    <button onclick="loadMap('index.html')">Load Map 2</button>
+    <button onclick="loadMap('sampl11.html')">Load Map 3</button>
+    
+    <!-- Placeholder for the maps -->
+    <div id="mapContainer"></div>
+    
+    <script>
+        function loadMap(mapFile) {
+            var mapContainer = document.getElementById('mapContainer');
+            mapContainer.innerHTML = `<iframe src="${mapFile}" width="100%" height="500"></iframe>`;
+        }
+    </script>
+</body>
+</html>

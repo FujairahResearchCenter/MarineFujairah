@@ -1,0 +1,24 @@
+# [START cloudbuild_npm_node]
+steps:
+- name: node
+  entrypoint: npm
+  args: ['install']
+# - name: node
+#   entrypoint: npm
+#   args: ['test']
+- name: node
+  entrypoint: npm
+  args: ['run', 'build']
+# [END cloudbuild_npm_node]
+
+# [START cloudstorage_transfer]
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['-m', 'cp', '-r', 'dist/*', 'gs://devfest.mscc.mu']
+# [END cloudstorage_transfer]
+
+# Artifacts cannot traverse directories
+#artifacts:
+#  objects:
+#    location: 'gs://devfest.mscc.mu'
+#    paths: ['dist/*', 'dist/assets', 'dist/images']
+  

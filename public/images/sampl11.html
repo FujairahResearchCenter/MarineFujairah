@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Getting Started - Leaflet js Map interactive library</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+</head>
+<body>
+<div id="map" style="width: 1200px; height: 600px;"></div> 
+
+<script>
+var newMap = L.map('map').setView([25.193689444444444, 56.380330555555556], 9.5);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href=”http://osm.org/copyright”>OpenStreetMap</a> contributors'
+}).addTo(newMap);
+
+// ******* OR YOU CAN USE BELOW CODE TO ADD MAPBOX TILE LAYER WITH LEAFLETJS ******
+// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<YOUR_API_TOKEN>', {
+// maxZoom: 18,
+// attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+// '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+// 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+// id: 'mapbox.streets'
+// }).addTo(newMap);
+
+//binding popup event with leaflet marker and map
+//binding popup event with leaflet marker and map
+L.marker([25.35036, 56.37969]).addTo(newMap).bindPopup("<b>Anemone Gardens</b><br />Depth: 12-19 m, Notes: Reef, Size: 200m in length and 160m in width").openPopup();
+L.marker([25.41861, 56.37617]).addTo(newMap).bindPopup("<b>Car Cemetery</b><br />Notes: Wreck").openPopup();
+L.marker([25.35333, 56.38000]).addTo(newMap).bindPopup("<b>Coral Gardens</b><br />Depth: 24-28 m, Notes: Reef, Size: 140m length & 100m width").openPopup();
+L.marker([25.06742, 56.40711]).addTo(newMap).bindPopup("<b>Deep Reef</b>").openPopup();
+L.marker([25.11820, 56.39828]).addTo(newMap).bindPopup("<b>Deep Reef (new)</b>").openPopup();
+L.marker([25.60392, 56.35164]).addTo(newMap).bindPopup("<b>Dibba Rock</b><br/>Depth: 16 m, Notes: Reef, Size: 100m length & 100m width").openPopup();
+L.marker([25.34064, 56.37769]).addTo(newMap).bindPopup("<b>Hole in the Wall</b><br />Depth: 16 m, Notes: Reef").openPopup();
+L.marker([25.51244, 56.38242]).addTo(newMap).bindPopup("<b>Inchcape 1</b><br />Depth: 30 m, Notes: Wreck").openPopup();
+L.marker([25.33883, 56.38147]).addTo(newMap).bindPopup("<b>Inchcape 2</b><br />Depth: 18 m, Notes: Wreck").openPopup();
+L.marker([25.12847, 56.38463]).addTo(newMap).bindPopup("<b>Inchcape 10</b>").openPopup();
+L.marker([25.18939, 56.45850]).addTo(newMap).bindPopup("<b>Ines</b>").openPopup();
+L.marker([25.33469, 56.38160]).addTo(newMap).bindPopup("<b>Martini Rock</b><br />Depth: 18 m, Notes: Reef, Size: The rock itself is around 160m in length and at the widest point 80m across").openPopup();
+L.marker([25.27250, 56.37544]).addTo(newMap).bindPopup("<b>Murbah Reef</b>").openPopup();
+L.marker([25.32422, 56.38222]).addTo(newMap).bindPopup("<b>Ras Qidfa</b>").openPopup();
+L.marker([25.30631, 56.38636]).addTo(newMap).bindPopup("<b>Refinery Reef</b>").openPopup();
+L.marker([25.09650, 56.40348]).addTo(newMap).bindPopup("<b>Ruby Reef</b>").openPopup();
+L.marker([25.35333, 56.37672]).addTo(newMap).bindPopup("<b>Shark Island</b><br />Depth: 18 m, Notes: Reef, Size: 120m long and 80m wide").openPopup();
+L.marker([25.48194, 56.36586]).addTo(newMap).bindPopup("<b>Sharm Rocks</b><br />Depth: 12 m, Notes: Reef, Size: 150m long and 100m wide").openPopup();
+L.marker([25.49139, 56.36639]).addTo(newMap).bindPopup("<b>Snoopy Island</b><br />Depth: 6 m, Notes: Reef").openPopup();
+L.marker([25.36285, 56.77103]).addTo(newMap).bindPopup("<b>Sub U553</b>").openPopup();
+L.marker([25.03350, 56.43485]).addTo(newMap).bindPopup("<b>XR Tug</b>").openPopup();
+L.marker([25.00998, 56.42351]).addTo(newMap).bindPopup("<b>Paradise Reef</b>").openPopup();
+L.marker([25.60426, 56.34982]).addTo(newMap).bindPopup("<b>Artificial Reef</b><br />Depth: 15 m, Notes: Wreck, Reef").openPopup();
+L.marker([25.60326, 56.35122]).addTo(newMap).bindPopup("<b>Dibba Island</b><br />Depth: 5-15 m, Notes: Reef").openPopup();
+L.marker([25.33716, 56.38068]).addTo(newMap).bindPopup("<b>Martini Wall</b><br />Depth: 12-19 m, Notes: Reef").openPopup();
+L.marker([25.49163, 56.37437]).addTo(newMap).bindPopup("<b>Snoopy Deep Reef</b><br />Depth: 26 m, Notes: Wreck, Reef").openPopup();
+</script>
+</body>
+</html>
