@@ -32,12 +32,12 @@ import HelloWorld from "./components/HelloWorld.vue";
             <li
               class="py-2 border-b-4 border-white hover:border-b-4 hover:border-green-600 hover:transition hover:ease-in-out duration-300"
             >
-              <RouterLink to="speakers">RESEARCHS</RouterLink>
+              <RouterLink to="researchers">RESEARCHS</RouterLink>
             </li>
             <li
               class="py-2 border-b-4 border-white hover:border-b-4 hover:border-green-600 hover:transition hover:ease-in-out duration-300"
             >
-              <RouterLink to="speakers">NEWS</RouterLink>
+              <RouterLink to="partners">STRATEGIC PARTNERS</RouterLink>
             </li>
             <li
               class="py-2 border-b-4 border-white hover:border-b-4 hover:border-green-600 hover:transition hover:ease-in-out duration-300"
