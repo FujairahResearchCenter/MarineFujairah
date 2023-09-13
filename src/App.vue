@@ -14,6 +14,11 @@ import HelloWorld from "./components/HelloWorld.vue";
           <a href="https://www.frc.ae/" target="_blank" rel="noreferrer" class="text-sm text-gray-500">
             <img class="h-12" src="/images/frc.png"/>
           </a>
+      </h1>
+    </router-link>
+    <router-link :to="{ name: 'home' }" rel="noreferrer" class="text-sm">
+      <h1 style="font-size: 1.5em;">
+        <b><strong>
           Fujairah Marine Research
         </strong></b>
       </h1>
