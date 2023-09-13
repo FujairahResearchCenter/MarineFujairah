@@ -23,11 +23,9 @@ Join us in our mission to preserve the health of our planet. We aim to shape a b
 		<div class="mt-8 md:mt-20 flex flex-col items-center">
 			<div class="mt-6 md:mt-0 md:ml-2 lg:ml-6">
 				<div style="text-align: center;">
-					<h2 class="text-2xl md:text-3xl font-bold mb-2 md:mb-4">Our services</h2>
+					<h2 class="text-2xl md:text-3xl font-bold mb-2 md:mb-4">OUR SERVICES</h2>
 				</div>
-				<p class="mb-2 md:mb-4 text-sm md:text-lg">
-					UAEFlora is a fully referenced, extensively validated, evolving, virtual database which has been designed and developed to introduce native plants from the biodiversity of UAE to the Global scientific communities, with the help and support of UAE plant experts from all the emirates.
-				</p>
+				<br>
 				<br>
 				<ul class="flex justify-center list-none p-0 mb-2 md:mb-4 text-sm md:text-lg">
 					<li class="flex-grow-01 mx-4">
@@ -146,41 +144,9 @@ Join us in our mission to preserve the health of our planet. We aim to shape a b
         </div>
 
         <!-- Partners -->
-        <div class="grid place-items-center md:place-items-start">
-            <h2 class="mt-8 md:mt-10 text-3xl font-bold">Partners</h2>
-        </div>
-		
-		<div class="grid place-items-center md:place-items-start">
-		<br>
-		<p class="mb-2 md:mb-4 text-sm md:text-lg">
-		FRC is committed to working with the strategic partners and stakeholders. we work closely with governmental agencies and international organizations, actively incorporating our research findings into policies and management strategies. This integration is vital to ensure that our scientific insights translate into effective measures that safeguard our marine ecosystems for generations to come.</p>
-		</div>
-		<br>
-        <div class="md:hidden sm:block lg:block">
-            <div class="flex flex-col lg:flex-row md:gap-4 items-center">
-                <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/fujairahholdings.png" />
-                <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/manahil.png" />
-                <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/uaeuniversity.png" />
-                <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/sharjah.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/raibal.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/ummu.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/oman.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/icaba.png" />
-            </div> 	
-        </div>
 
-        <div class="hidden md:block lg:hidden">
-            <div class="flex flex-row gap-4 items-center">
-              <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/fujairahholdings.png" />
-                <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/manahil.png" />
-                <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/uaeuniversity.png" />
-                <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/sharjah.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/raibal.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/ummu.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/oman.png" />
-				<img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/icaba.png" />
-            </div>
-        </div>
+		
+
 
 			
     </div>

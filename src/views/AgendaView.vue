@@ -8,7 +8,7 @@
 		<div class="max-w-6xl mx-auto mt-2 mb-10 px-4 lg:px-0" style="overflow: hidden;"><iframe src="/images/sampl11.html" scrolling="no" style=" width: 1250px; height: 500px;  overflow: hidden;" class="mx-auto mt-2 mb-10"></iframe></div>
 		<br>
 		<div class="max-w-6xl mx-auto mt-8 md:mt-20 mb-10 px-4 lg:px-0"> <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Dolphin Map</h2></div>
-		<div class="max-w-6xl mx-auto mt-2 mb-10 px-4 lg:px-0" style="overflow: hidden;"><iframe src="/images/index.html" scrolling="no" style=" width: 1250px; height: 500px;  overflow: hidden;" class="mx-auto mt-2 mb-10"></iframe></div>
+		<div class="max-w-6xl mx-auto mt-2 mb-10 px-4 lg:px-0" style="overflow: hidden;"><iframe src="/images/Mindex.html" scrolling="no" style=" width: 1250px; height: 500px;  overflow: hidden;" class="mx-auto mt-2 mb-10"></iframe></div>
 		
 		<div class="max-w-6xl mx-auto mt-8 md:mt-20 mb-10 px-4 lg:px-0"> <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Marine Reserves - Fujairah</h2></div>
 		<div class="max-w-6xl mx-auto mt-2 mb-10 px-4 lg:px-0" style="overflow: hidden;"><iframe src="/images/output_map.html" scrolling="no" style=" width: 1250px; height: 500px;  overflow: hidden;" class="mx-auto mt-2 mb-10"></iframe></div>
