@@ -30,7 +30,7 @@ Join us in our mission to preserve the health of our planet. We aim to shape a b
 				<ul class="flex justify-center list-none p-0 mb-2 md:mb-4 text-sm md:text-lg">
 					<li class="flex-grow-01 mx-4">
 						<a href="coral_diving_link.html">
-							<img src="/images/a.jpg" alt="Cetaceans survey" class="inline-block w-40 h-40 md:w-48 md:h-48 rounded-full mb-2 md:mb-4">
+							<img src="/images/a.jpg" alt="Cetaceans survey" class="inline-block w-40 h-40 rounded-full mb-4">
 							<p class="font-bold">Cetaceans survey</p>
 						</a>
 					</li>
