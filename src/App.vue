@@ -7,13 +7,12 @@ import HelloWorld from "./components/HelloWorld.vue";
   <header class="shadow-md bg-white sticky top-0 z-50 header--top">
     <nav class="max-w-6xl mx-auto py-4 px-4 lg:px-0">
       <div class="flex justify-between items-center">
-        <!-- <RouterLink to="/"> -->
-      <router-link :to="{ name: 'home' }" rel="noreferrer" class="text-sm flex items-center">
-        <img class="h-12" src="/images/frc.png" alt="FRC Logo" style="max-width: 100px; margin-right: 10px;" />
-        <h1 style="font-size: 1.5em;">
-          <b><strong>Fujairah Marine Research</strong></b>
-        </h1>
-      </router-link>
+        <router-link :to="{ name: 'home' }" rel="noreferrer" class="text-sm flex items-center">
+          <img class="h-16" src="/images/frc.png" alt="FRC Logo" style="max-width: none; margin-right: 10px;" />
+          <h1 style="font-size: 1.5em; text-align: center;">
+            <b><strong>Fujairah Marine Research</strong></b>
+          </h1>
+        </router-link>
         <!-- </RouterLink> -->
 
         <div class="hidden md:block">
