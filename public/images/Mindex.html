@@ -1,233 +1,203 @@
-	<!doctype html>
-	<html lang="en">
 
-	<head>
-		<meta charset='utf-8' />
-		<title>
-			Preview
-		</title>
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
-		<!--[if lte IE 8]>
-				<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
-			<![endif]-->
-		<style>
-			html {
-				height: 100%
-			}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Getting Started - Leaflet js Map interactive library</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+</head>
+<body>
+<div id="map" style="width: 1200px; height: 600px;"></div> 
 
-			body {
-				height: 100%;
-				margin: 0;
-				padding: 0;
-			}
+<script>
+var newMap = L.map('map').setView([25.193689444444444, 56.380330555555556], 9.5);
 
-			#map {
-				height: 100%
-			}
-		</style>
-		<link rel="stylesheet" href="gh-pages.css" />
-	</head>
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href=”http://osm.org/copyright”>OpenStreetMap</a> contributors'
+}).addTo(newMap);
 
-	<body>
+// ******* OR YOU CAN USE BELOW CODE TO ADD MAPBOX TILE LAYER WITH LEAFLETJS ******
+// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<YOUR_API_TOKEN>', {
+// maxZoom: 18,
+// attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+// '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+// 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+// id: 'mapbox.streets'
+// }).addTo(newMap);
 
-		<div id="map"></div>
-		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-		<script src="catiline.js"></script>
-		<script src="leaflet.shpfile.js"></script>
-		<script>
-		var redIcon = L.icon({
-			iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-			iconSize: [25, 41],
-			iconAnchor: [12, 41],
-			popupAnchor: [1, -34],
-			shadowSize: [41, 41]
-		});
-			var newMap = L.map('map').setView([25,56], 8);
-			var watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
-				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-			}).addTo(newMap);
+//binding popup event with leaflet marker and map
+//binding popup event with leaflet marker and map
 			
-L.marker([25.18556, 57.04401], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2016-03-05 00:00:00<br />Collective ID: FUJ_010<br />Depth: 566.0 m");
-L.marker([24.92156, 56.92795], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/10/2016<br />Collective ID: FUJ_011<br />Depth: 434.0 m");
-L.marker([25.00041, 56.85802], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-07-03 00:00:00<br />Collective ID: FUJ_012<br />Depth: 286.0 m");
-L.marker([24.99964, 57.11344], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_020<br />Depth: 73.5 m");
-L.marker([25.0442, 57.09392], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_021<br />Depth: 74.3 m");
-L.marker([25.00605, 56.94046], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_023<br />Depth: 57.6 m");
-L.marker([25.00428, 56.94121], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_024<br />Depth: 58.0 m");
-L.marker([25.02689, 57.04845], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_026<br />Depth: 69.0 m");
-L.marker([25.02689, 57.04845], { icon: createCustomIcon('red') }).addTo(newMap).bindPopup("<b>stenella attenuata (spotted dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_027<br />Depth: 69.0 m");
-L.marker([24.92642, 57.01573], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_031<br />Depth: 63.3 m");
-L.marker([24.94155, 57.09080], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_032<br />Depth: 71.4 m");
-L.marker([24.97485, 57.08690], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_033<br />Depth: 72.0 m");
-L.marker([24.99938, 57.11151], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_036<br />Depth: 75.0 m");
-L.marker([25.04813, 57.08282], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_037<br />Depth: 73.0 m");
-L.marker([25.02718, 56.83876], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-09-11 00:00:00<br />Collective ID: FUJ_042<br />Depth: 258.0 m");
-L.marker([25.04721, 56.80373], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-09-11 00:00:00<br />Collective ID: FUJ_043<br />Depth: 273.0 m");
-L.marker([25.07157, 56.96585], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-11-11 00:00:00<br />Collective ID: FUJ_045<br />Depth: 505.0 m");
-L.marker([25.08051, 56.89055], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 11/112017<br />Collective ID: FUJ_046<br />Depth: 223.0 m");
-L.marker([25.29167, 56.58333], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2017-07-01 00:00:00<br />Collective ID: FUJ_048<br />Depth: 125.0 m");
-L.marker([25.02236, 56.42599], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2018-04-03 00:00:00<br />Collective ID: FUJ_050<br />Depth: 34.0 m");
-L.marker([25.18281, 56.40686], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_051 <br />Depth: 39.0 m");
-L.marker([25.25911, 56.67322], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_052<br />Depth: 150.0 m");
-L.marker([25.16731, 57.03197], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_053<br />Depth: 349.0 m");
-L.marker([25.15227, 57.08821], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_054<br />Depth: 1027.0 m");
-L.marker([25.17202, 57.01266], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_056<br />Depth: 200.0 m");
-L.marker([25.16981, 57.03716], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ-057<br />Depth: 417.0 m");
-L.marker([25.21661, 56.81478], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_059<br />Depth: 219.0 m");
-L.marker([25.21538, 57.02737], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_060<br />Depth: 457.0 m");
-L.marker([25.22185, 57.02927], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_061<br />Depth: 483.0 m");
-L.marker([25.12965, 57.03797], { icon: createCustomIcon('violet') }).addTo(newMap).bindPopup("<b>steno bredanensis (rough-toothed dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_062<br />Depth: 584.0 m");
-L.marker([25.12965, 57.03797], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_063<br />Depth: 583.0 m");
-L.marker([25.15033, 57.04888], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_064<br />Depth: 588.0 m");
-L.marker([25.14470, 57.03065], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_065<br />Depth: 388.0 m");
-L.marker([25.16810, 56.90089], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_066<br />Depth: 260.0 m");
-L.marker([25.16726, 56.90742], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_067<br />Depth: 252.0 m");
-L.marker([25.16451, 56.46825], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_069<br />Depth: 69.0 m");
-L.marker([25.17385, 56.47048], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_070<br />Depth: 72.0 m");
-L.marker([25.17655, 56.47378], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_071<br />Depth: 74.0 m");
-L.marker([25.14818, 57.02263], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_072<br />Depth: 274.0 m");
-L.marker([25.12095, 57.01643], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_073<br />Depth: 462.0 m");
-L.marker([25.12233, 57.05392], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_074<br />Depth: 824.0 m");
-L.marker([25.19680, 56.97782], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_076<br />Depth: 224.0 m");
-L.marker([25.15319, 56.42245], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_078<br />Depth: 49.0 m");
-L.marker([25.47598, 56.70352], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_079<br />Depth: 96.0 m");
-L.marker([25.22717, 57.00475], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_080<br />Depth: 348.0 m");
-L.marker([25.12229, 57.03046], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_082<br />Depth: 573.0 m");
-L.marker([25.11141, 56.99166], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_083<br />Depth: 273.0 m");
-L.marker([25.0716, 56.96084], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_086<br />Depth: 485.0 m");
-L.marker([25.12102, 57.0031], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_087<br />Depth: 312.0 m");
-L.marker([25.11904, 57.03839], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_088<br />Depth: 684.0 m");
-L.marker([25.19165, 56.99106], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_089<br />Depth: 222.0 m");
-L.marker([25.07722, 57.02201], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_091<br />Depth: 843.0 m");
-L.marker([25.0716, 56.96084], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_092<br />Depth: 486.0 m");
-L.marker([25.00306, 56.92441], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 20/5/2018<br />Collective ID: FUJ_096<br />Depth: 564.0 m");
-L.marker([25.15415, 56.52334], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/5/2018<br />Collective ID: FUJ_097<br />Depth: 109.0 m");
-L.marker([25.14912, 57.06063], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/5/2018<br />Collective ID: FUJ_098<br />Depth: 594.0 m");
-L.marker([25.14951, 56.89844], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_099<br />Depth: 254.0 m");
-L.marker([25.17165, 56.87662], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_100<br />Depth: 278.0 m");
-L.marker([25.21437, 56.99348], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_101<br />Depth: 288.0 m");
-L.marker([25.21974, 56.97631], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_102<br />Depth: 273.0 m");
-L.marker([25.21274, 56.89665], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_103<br />Depth: 256.0 m");
-L.marker([25.28807, 56.92606], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/5/2018<br />Collective ID: FUJ_104<br />Depth: 253.0 m");
-L.marker([25.26694, 56.96089], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/5/2018<br />Collective ID: FUJ_105<br />Depth: 263.0 m");
-L.marker([25.24348, 56.91494], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/5/2018<br />Collective ID: FUJ_106<br />Depth: 260.0 m");
-L.marker([25.24249, 57.02346], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2018-11-08 00:00:00<br />Collective ID: FUJ_110<br />Depth: 484.0 m");
-L.marker([25.21046, 56.92227], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/11/2018<br />Collective ID: FUJ_113<br />Depth: 257.0 m");
-L.marker([25.10778, 56.61699], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/11/2018<br />Collective ID: FUJ_114<br />Depth: 181.0 m");
-L.marker([25.13000, 57.00531], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/11/2018<br />Collective ID: FUJ_115<br />Depth: 262.0 m");
-L.marker([25.12730, 56.82609], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_117<br />Depth: 266.0 m");
-L.marker([25.12439, 56.90824], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_118<br />Depth: 251.0 m");
-L.marker([25.16630, 57.03455], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_119<br />Depth: 375.0 m");
-L.marker([25.16578, 56.9738], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_121 <br />Depth: 141.0 m");
-L.marker([25.16579, 56.97380], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_122<br />Depth: 141.0 m");
-L.marker([25.16652, 56.93820], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_123<br />Depth: 206.0 m");
-L.marker([25.26718, 56.98921], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_124<br />Depth: 281.0 m");
-L.marker([25.169017, 56.502100], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2018<br />Collective ID: FUJ_125<br />Depth: 92.0 m");
-L.marker([25.31713, 56.50429], { icon: createCustomIcon('yellow') }).addTo(newMap).bindPopup("<b>balaenoptera edeni (bryde's whale)</b><br />Date: 22/2/2019<br />Collective ID: FUJ_130<br />Depth: nan m");
-L.marker([25.104625, 56.358442], { icon: createCustomIcon('black') }).addTo(newMap).bindPopup("<b>kogia sima (dwarf sperm whale)</b><br />Date: 27/7/2019<br />Collective ID: FUJ_132<br />Depth: nan m");
-L.marker([25.12034, 56.58071], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 23/9/2019<br />Collective ID: FUJ_134<br />Depth: 152.0 m");
-L.marker([25.11876, 56.54188], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 25/9/2019<br />Collective ID: FUJ_135<br />Depth: 128.0 m");
-L.marker([25.11876, 56.54188], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2019<br />Collective ID: FUJ_136<br />Depth: 128.0 m");
-L.marker([25.0977, 56.53422], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/12/2019<br />Collective ID: FUJ_137<br />Depth: 109.0 m");
-L.marker([25.31325, 56.42226], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-08-04 00:00:00<br />Collective ID: FUJ_142<br />Depth: 61.0 m");
-L.marker([25.18263, 56.41375], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-08-04 00:00:00<br />Collective ID: FUJ_143<br />Depth: 45.0 m");
-L.marker([25.25469, 56.42901], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-08-04 00:00:00<br />Collective ID: FUJ_144<br />Depth: 63.0 m");
-L.marker([25.31340, 56.43672], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 25/4/2020<br />Collective ID: FUJ_146<br />Depth: 67.0 m");
-L.marker([25.518531, 56.369627], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 31/8/2020<br />Collective ID: FUJ_149<br />Depth: nan m");
-L.marker([25.04379, 56.56609], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-04-11 00:00:00<br />Collective ID: FUJ_150<br />Depth: 137.0 m");
-L.marker([25.14882, 56.47921], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_154<br />Depth: 74.0 m");
-L.marker([25.14997, 57.08409], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_155<br />Depth: 1007.0 m");
-L.marker([25.16909, 56.93046], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_156<br />Depth: 217.0 m");
-L.marker([25.16633, 56.79599], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_157<br />Depth: 233.0 m");
-L.marker([25.48707, 56.75393], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_158<br />Depth: 102.0 m");
-L.marker([25.14724, 57.0195], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_161<br />Depth: 252.0 m");
-L.marker([25.13923, 57.02757], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_162<br />Depth: 385.0 m");
-L.marker([25.14385, 56.9994], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_163<br />Depth: 154.0 m");
-L.marker([25.11977, 57.06858], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_165<br />Depth: 961.0 m");
-L.marker([25.11397, 56.91269], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-12-02 00:00:00<br />Collective ID: FUJ_168<br />Depth: 246.0 m");
-L.marker([25.44215, 56.57085], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 13/2/2021<br />Collective ID: FUJ_171<br />Depth: 92.0 m");
-L.marker([25.32962, 56.76031], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 13/2/2021<br />Collective ID: FUJ_172<br />Depth: 117.0 m");
-L.marker([25.16561, 56.93856], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_173<br />Depth: 205.0 m");
-L.marker([25.21423, 56.68726], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_174<br />Depth: 171.0 m");
-L.marker([25.22183, 56.92108], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_175<br />Depth: 262.0 m");
-L.marker([25.25607, 56.92058], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_176<br />Depth: 260.0 m");
-L.marker([25.19644, 56.942], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_177<br />Depth: 232.0 m");
-L.marker([25.22014, 57.04251], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/3/2021 <br />Collective ID: FUJ_180<br />Depth: 589.0 m");
-L.marker([25.21287, 57.03594], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/3/2021 <br />Collective ID: FUJ_182<br />Depth: 531.0 m");
-L.marker([25.2095, 57.05785], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/3/2021 <br />Collective ID: FUJ_185<br />Depth: 793.0 m");
-L.marker([25.2149, 56.9831], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/3/2021<br />Collective ID: FUJ_187<br />Depth: 270.0 m");
-L.marker([25.2388, 57.0226], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/3/2021<br />Collective ID: FUJ_189<br />Depth: 471.0 m");
-L.marker([25.12569, 57.07343], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 28/3/2021<br />Collective ID: FUJ_190<br />Depth: 982.0 m");
-L.marker([25.21923, 57.04101], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 28/3/2021<br />Collective ID: FUJ_191<br />Depth: 577.0 m");
-L.marker([25.21957, 56.48111], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 28/3/2021<br />Collective ID: FUJ_192<br />Depth: 81.0 m");
-L.marker([25.11267, 57.02414], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 29/3/2021<br />Collective ID: FUJ_194<br />Depth: 612.0 m");
-L.marker([25.287893, 56.446991], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 29/3/2021<br />Collective ID: FUJ_195<br />Depth: 72.0 m");
-L.marker([25.12379, 57.06469], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-08-08 00:00:00<br />Collective ID: FUJ_200<br />Depth: 910.0 m");
-L.marker([25.18920, 56.43657], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 20/10/2021<br />Collective ID: FUJ_210<br />Depth: 60.0 m");
-L.marker([25.13133, 57.02262], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_213<br />Depth: 1000.0 m");
-L.marker([25.26637, 56.59372], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_214<br />Depth: 135.0 m");
-L.marker([25.27262, 56.67000], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_215<br />Depth: 145.0 m");
-L.marker([25.18245, 57.05929], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_216<br />Depth: 700.0 m");
-L.marker([25.27300, 56.69718], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_218<br />Depth: 152.0 m");
-L.marker([25.20525, 56.71875], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_219<br />Depth: 200.0 m");
-L.marker([25.32014, 56.97465], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/11/2021<br />Collective ID: FUJ_221<br />Depth: 280.0 m");
-L.marker([25.18514, 57.05845], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/11/2021<br />Collective ID: FUJ_222<br />Depth: 900.0 m");
-L.marker([25.16567, 56.72045], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/11/2021<br />Collective ID: FUJ_223<br />Depth: 200.0 m");
-L.marker([25.12465, 56.85433], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_226<br />Depth: 260.0 m");
-L.marker([25.13268, 57.02509], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_227<br />Depth: 415.0 m");
-L.marker([25.32046, 57.07199], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_228<br />Depth: 375.0 m");
-L.marker([25.32109, 57.05201], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_229<br />Depth: 310.0 m");
-L.marker([25.17098, 57.00399], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2018<br />Collective ID: FUJ_230<br />Depth: 175.0 m");
-L.marker([25.17698, 56.41694], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2022-09-02 00:00:00<br />Collective ID: FUJ_236<br />Depth: 48.0 m");
-L.marker([25.17578, 56.42133], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/2/2022<br />Collective ID: FUJ_237<br />Depth: 46.0 m");
-L.marker([25.125, 57.0247], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_241<br />Depth: 490.0 m");
-L.marker([25.1304, 57.0525], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_242<br />Depth: 758.0 m");
-L.marker([25.1254, 57.085], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_243<br />Depth: 1062.0 m");
-L.marker([25.1739, 57.0608], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_244<br />Depth: 767.0 m");
-L.marker([25.2373, 57.033], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_246<br />Depth: 534.0 m");
-L.marker([25.2535, 57.0105], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_247<br />Depth: 403.0 m");
-L.marker([25.21706, 57.00047], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_248<br />Depth: 312.0 m");
-L.marker([25.18091, 57.05571], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_249<br />Depth: 714.0 m");
-L.marker([25.303, 56.8737], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_250<br />Depth: 204.0 m");
-L.marker([25.12012, 57.00106], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_252<br />Depth: 296.0 m");
-L.marker([25.12584, 57.0512], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_254<br />Depth: 782.0 m");
-L.marker([25.17012, 57.05865], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_255<br />Depth: 725.0 m");
-L.marker([25.16596, 56.89723], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_256<br />Depth: 264.0 m");
-L.marker([25.21635, 56.95201], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_257<br />Depth: 270.0 m");
-L.marker([25.25748, 56.69896], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_258<br />Depth: 158.0 m");
-L.marker([25.12563, 57.04], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_260<br />Depth: 644.0 m");
-L.marker([25.13739, 57.01398], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_261<br />Depth: 277.0 m");
-L.marker([25.1242, 56.94172], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_262<br />Depth: 203.0 m");
-L.marker([25.17241, 56.93903], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_263<br />Depth: 208.0 m");
-L.marker([25.54023, 56.77983], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 23/2/2022<br />Collective ID: FUJ_267<br />Depth: 106.0 m");
-L.marker([25.43846, 56.41239], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 23/2/2022<br />Collective ID: FUJ_268<br />Depth: 59.0 m");
-L.marker([25.21966, 56.49536], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_270<br />Depth: 92.0 m");
-L.marker([25.0943, 57.0298], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_271<br />Depth: 828.0 m");
-L.marker([25.1225, 57.0566], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_272<br />Depth: 845.0 m");
-L.marker([25.10662, 57.04801], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_273<br />Depth: 879.0 m");
-L.marker([25.22919, 56.83538], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_275<br />Depth: 226.0 m");
-L.marker([25.22919, 56.83538], { icon: createCustomIcon('violet') }).addTo(newMap).bindPopup("<b>steno bredanensis (rough-toothed dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_276<br />Depth: 226.0 m");
-L.marker([25.13534, 57.08753], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/3/2022<br />Collective ID: FUJ_277<br />Depth: 1060.0 m");
-L.marker([25.161233, 56.456083], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2022-05-06 00:00:00<br />Collective ID: FUJ_282<br />Depth: 65.0 m");
-L.marker([25.21843, 56.81306], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/6/2022<br />Collective ID: FUJ_283<br />Depth: nan m");
-L.marker([25.22045, 57.01192], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/6/2022<br />Collective ID: FUJ_284<br />Depth: nan m");
-L.marker([25.15913, 56.50232], { icon: createCustomIcon('green') }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/6/2022<br />Collective ID: FUJ_285<br />Depth: 91.0 m");
-L.marker([25.28185, 56.98856], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_287<br />Depth: 294.0 m");
-L.marker([25.28185, 56.98856], { icon: createCustomIcon('violet') }).addTo(newMap).bindPopup("<b>steno bredanensis (rough-toothed dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_288<br />Depth: 294.0 m");
-L.marker([25.32806, 56.96416], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_290<br />Depth: 266.0 m");		
-function createCustomIcon(color) {
-			return L.icon({
-				iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-' + color + '.png',
-				shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-				iconSize: [25, 41],
-				iconAnchor: [12, 41],
-				popupAnchor: [1, -34],
-				shadowSize: [41, 41]
-			});
-		}
-			
-		</script>
-	</body>
-
-	</html>
+L.marker([25.18556, 57.04401], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2016-03-05 00:00:00<br />Collective ID: FUJ_010<br />Depth: 566.0 m");
+L.marker([24.92156, 56.92795], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/10/2016<br />Collective ID: FUJ_011<br />Depth: 434.0 m");
+L.marker([25.00041, 56.85802], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-07-03 00:00:00<br />Collective ID: FUJ_012<br />Depth: 286.0 m");
+L.marker([24.99964, 57.11344], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_020<br />Depth: 73.5 m");
+L.marker([25.0442, 57.09392], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_021<br />Depth: 74.3 m");
+L.marker([25.00605, 56.94046], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_023<br />Depth: 57.6 m");
+L.marker([25.00428, 56.94121], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_024<br />Depth: 58.0 m");
+L.marker([25.02689, 57.04845], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_026<br />Depth: 69.0 m");
+L.marker([25.02689, 57.04845], { icon: null }).addTo(newMap).bindPopup("<b>stenella attenuata (spotted dolphin)</b><br />Date: 25/4/2017<br />Collective ID: FUJ_027<br />Depth: 69.0 m");
+L.marker([24.92642, 57.01573], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_031<br />Depth: 63.3 m");
+L.marker([24.94155, 57.09080], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_032<br />Depth: 71.4 m");
+L.marker([24.97485, 57.08690], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_033<br />Depth: 72.0 m");
+L.marker([24.99938, 57.11151], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_036<br />Depth: 75.0 m");
+L.marker([25.04813, 57.08282], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/4/2017<br />Collective ID: FUJ_037<br />Depth: 73.0 m");
+L.marker([25.02718, 56.83876], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-09-11 00:00:00<br />Collective ID: FUJ_042<br />Depth: 258.0 m");
+L.marker([25.04721, 56.80373], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-09-11 00:00:00<br />Collective ID: FUJ_043<br />Depth: 273.0 m");
+L.marker([25.07157, 56.96585], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-11-11 00:00:00<br />Collective ID: FUJ_045<br />Depth: 505.0 m");
+L.marker([25.08051, 56.89055], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 11/112017<br />Collective ID: FUJ_046<br />Depth: 223.0 m");
+L.marker([25.29167, 56.58333], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2017-07-01 00:00:00<br />Collective ID: FUJ_048<br />Depth: 125.0 m");
+L.marker([25.02236, 56.42599], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2018-04-03 00:00:00<br />Collective ID: FUJ_050<br />Depth: 34.0 m");
+L.marker([25.18281, 56.40686], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_051 <br />Depth: 39.0 m");
+L.marker([25.25911, 56.67322], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_052<br />Depth: 150.0 m");
+L.marker([25.16731, 57.03197], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_053<br />Depth: 349.0 m");
+L.marker([25.15227, 57.08821], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 20/3/2018<br />Collective ID: FUJ_054<br />Depth: 1027.0 m");
+L.marker([25.17202, 57.01266], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_056<br />Depth: 200.0 m");
+L.marker([25.16981, 57.03716], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ-057<br />Depth: 417.0 m");
+L.marker([25.21661, 56.81478], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_059<br />Depth: 219.0 m");
+L.marker([25.21538, 57.02737], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_060<br />Depth: 457.0 m");
+L.marker([25.22185, 57.02927], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_061<br />Depth: 483.0 m");
+L.marker([25.12965, 57.03797], { icon: null }).addTo(newMap).bindPopup("<b>steno bredanensis (rough-toothed dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_062<br />Depth: 584.0 m");
+L.marker([25.12965, 57.03797], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_063<br />Depth: 583.0 m");
+L.marker([25.15033, 57.04888], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_064<br />Depth: 588.0 m");
+L.marker([25.14470, 57.03065], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_065<br />Depth: 388.0 m");
+L.marker([25.16810, 56.90089], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_066<br />Depth: 260.0 m");
+L.marker([25.16726, 56.90742], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_067<br />Depth: 252.0 m");
+L.marker([25.16451, 56.46825], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_069<br />Depth: 69.0 m");
+L.marker([25.17385, 56.47048], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_070<br />Depth: 72.0 m");
+L.marker([25.17655, 56.47378], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_071<br />Depth: 74.0 m");
+L.marker([25.14818, 57.02263], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2018<br />Collective ID: FUJ_072<br />Depth: 274.0 m");
+L.marker([25.12095, 57.01643], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_073<br />Depth: 462.0 m");
+L.marker([25.12233, 57.05392], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_074<br />Depth: 824.0 m");
+L.marker([25.19680, 56.97782], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_076<br />Depth: 224.0 m");
+L.marker([25.15319, 56.42245], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_078<br />Depth: 49.0 m");
+L.marker([25.47598, 56.70352], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_079<br />Depth: 96.0 m");
+L.marker([25.22717, 57.00475], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_080<br />Depth: 348.0 m");
+L.marker([25.12229, 57.03046], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_082<br />Depth: 573.0 m");
+L.marker([25.11141, 56.99166], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_083<br />Depth: 273.0 m");
+L.marker([25.0716, 56.96084], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_086<br />Depth: 485.0 m");
+L.marker([25.12102, 57.0031], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_087<br />Depth: 312.0 m");
+L.marker([25.11904, 57.03839], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_088<br />Depth: 684.0 m");
+L.marker([25.19165, 56.99106], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_089<br />Depth: 222.0 m");
+L.marker([25.07722, 57.02201], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_091<br />Depth: 843.0 m");
+L.marker([25.0716, 56.96084], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2018<br />Collective ID: FUJ_092<br />Depth: 486.0 m");
+L.marker([25.00306, 56.92441], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 20/5/2018<br />Collective ID: FUJ_096<br />Depth: 564.0 m");
+L.marker([25.15415, 56.52334], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/5/2018<br />Collective ID: FUJ_097<br />Depth: 109.0 m");
+L.marker([25.14912, 57.06063], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/5/2018<br />Collective ID: FUJ_098<br />Depth: 594.0 m");
+L.marker([25.14951, 56.89844], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_099<br />Depth: 254.0 m");
+L.marker([25.17165, 56.87662], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_100<br />Depth: 278.0 m");
+L.marker([25.21437, 56.99348], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_101<br />Depth: 288.0 m");
+L.marker([25.21974, 56.97631], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_102<br />Depth: 273.0 m");
+L.marker([25.21274, 56.89665], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/5/2018<br />Collective ID: FUJ_103<br />Depth: 256.0 m");
+L.marker([25.28807, 56.92606], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/5/2018<br />Collective ID: FUJ_104<br />Depth: 253.0 m");
+L.marker([25.26694, 56.96089], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/5/2018<br />Collective ID: FUJ_105<br />Depth: 263.0 m");
+L.marker([25.24348, 56.91494], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/5/2018<br />Collective ID: FUJ_106<br />Depth: 260.0 m");
+L.marker([25.24249, 57.02346], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2018-11-08 00:00:00<br />Collective ID: FUJ_110<br />Depth: 484.0 m");
+L.marker([25.21046, 56.92227], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/11/2018<br />Collective ID: FUJ_113<br />Depth: 257.0 m");
+L.marker([25.10778, 56.61699], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/11/2018<br />Collective ID: FUJ_114<br />Depth: 181.0 m");
+L.marker([25.13000, 57.00531], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/11/2018<br />Collective ID: FUJ_115<br />Depth: 262.0 m");
+L.marker([25.12730, 56.82609], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_117<br />Depth: 266.0 m");
+L.marker([25.12439, 56.90824], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_118<br />Depth: 251.0 m");
+L.marker([25.16630, 57.03455], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_119<br />Depth: 375.0 m");
+L.marker([25.16578, 56.9738], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_121 <br />Depth: 141.0 m");
+L.marker([25.16579, 56.97380], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_122<br />Depth: 141.0 m");
+L.marker([25.16652, 56.93820], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_123<br />Depth: 206.0 m");
+L.marker([25.26718, 56.98921], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_124<br />Depth: 281.0 m");
+L.marker([25.169017, 56.502100], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2018<br />Collective ID: FUJ_125<br />Depth: 92.0 m");
+L.marker([25.31713, 56.50429], { icon: null }).addTo(newMap).bindPopup("<b>balaenoptera edeni (bryde's whale)</b><br />Date: 22/2/2019<br />Collective ID: FUJ_130<br />Depth: nan m");
+L.marker([25.104625, 56.358442], { icon: null }).addTo(newMap).bindPopup("<b>kogia sima (dwarf sperm whale)</b><br />Date: 27/7/2019<br />Collective ID: FUJ_132<br />Depth: nan m");
+L.marker([25.12034, 56.58071], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 23/9/2019<br />Collective ID: FUJ_134<br />Depth: 152.0 m");
+L.marker([25.11876, 56.54188], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 25/9/2019<br />Collective ID: FUJ_135<br />Depth: 128.0 m");
+L.marker([25.11876, 56.54188], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2019<br />Collective ID: FUJ_136<br />Depth: 128.0 m");
+L.marker([25.0977, 56.53422], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/12/2019<br />Collective ID: FUJ_137<br />Depth: 109.0 m");
+L.marker([25.31325, 56.42226], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-08-04 00:00:00<br />Collective ID: FUJ_142<br />Depth: 61.0 m");
+L.marker([25.18263, 56.41375], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-08-04 00:00:00<br />Collective ID: FUJ_143<br />Depth: 45.0 m");
+L.marker([25.25469, 56.42901], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-08-04 00:00:00<br />Collective ID: FUJ_144<br />Depth: 63.0 m");
+L.marker([25.31340, 56.43672], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 25/4/2020<br />Collective ID: FUJ_146<br />Depth: 67.0 m");
+L.marker([25.518531, 56.369627], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 31/8/2020<br />Collective ID: FUJ_149<br />Depth: nan m");
+L.marker([25.04379, 56.56609], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2020-04-11 00:00:00<br />Collective ID: FUJ_150<br />Depth: 137.0 m");
+L.marker([25.14882, 56.47921], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_154<br />Depth: 74.0 m");
+L.marker([25.14997, 57.08409], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_155<br />Depth: 1007.0 m");
+L.marker([25.16909, 56.93046], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_156<br />Depth: 217.0 m");
+L.marker([25.16633, 56.79599], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_157<br />Depth: 233.0 m");
+L.marker([25.48707, 56.75393], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_158<br />Depth: 102.0 m");
+L.marker([25.14724, 57.0195], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_161<br />Depth: 252.0 m");
+L.marker([25.13923, 57.02757], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_162<br />Depth: 385.0 m");
+L.marker([25.14385, 56.9994], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_163<br />Depth: 154.0 m");
+L.marker([25.11977, 57.06858], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-11-02 00:00:00<br />Collective ID: FUJ_165<br />Depth: 961.0 m");
+L.marker([25.11397, 56.91269], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-12-02 00:00:00<br />Collective ID: FUJ_168<br />Depth: 246.0 m");
+L.marker([25.44215, 56.57085], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 13/2/2021<br />Collective ID: FUJ_171<br />Depth: 92.0 m");
+L.marker([25.32962, 56.76031], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 13/2/2021<br />Collective ID: FUJ_172<br />Depth: 117.0 m");
+L.marker([25.16561, 56.93856], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_173<br />Depth: 205.0 m");
+L.marker([25.21423, 56.68726], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_174<br />Depth: 171.0 m");
+L.marker([25.22183, 56.92108], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_175<br />Depth: 262.0 m");
+L.marker([25.25607, 56.92058], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_176<br />Depth: 260.0 m");
+L.marker([25.19644, 56.942], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 13/2/2021 <br />Collective ID: FUJ_177<br />Depth: 232.0 m");
+L.marker([25.22014, 57.04251], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/3/2021 <br />Collective ID: FUJ_180<br />Depth: 589.0 m");
+L.marker([25.21287, 57.03594], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/3/2021 <br />Collective ID: FUJ_182<br />Depth: 531.0 m");
+L.marker([25.2095, 57.05785], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/3/2021 <br />Collective ID: FUJ_185<br />Depth: 793.0 m");
+L.marker([25.2149, 56.9831], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/3/2021<br />Collective ID: FUJ_187<br />Depth: 270.0 m");
+L.marker([25.2388, 57.0226], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/3/2021<br />Collective ID: FUJ_189<br />Depth: 471.0 m");
+L.marker([25.12569, 57.07343], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 28/3/2021<br />Collective ID: FUJ_190<br />Depth: 982.0 m");
+L.marker([25.21923, 57.04101], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 28/3/2021<br />Collective ID: FUJ_191<br />Depth: 577.0 m");
+L.marker([25.21957, 56.48111], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 28/3/2021<br />Collective ID: FUJ_192<br />Depth: 81.0 m");
+L.marker([25.11267, 57.02414], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 29/3/2021<br />Collective ID: FUJ_194<br />Depth: 612.0 m");
+L.marker([25.287893, 56.446991], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 29/3/2021<br />Collective ID: FUJ_195<br />Depth: 72.0 m");
+L.marker([25.12379, 57.06469], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2021-08-08 00:00:00<br />Collective ID: FUJ_200<br />Depth: 910.0 m");
+L.marker([25.18920, 56.43657], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 20/10/2021<br />Collective ID: FUJ_210<br />Depth: 60.0 m");
+L.marker([25.13133, 57.02262], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_213<br />Depth: 1000.0 m");
+L.marker([25.26637, 56.59372], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_214<br />Depth: 135.0 m");
+L.marker([25.27262, 56.67000], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_215<br />Depth: 145.0 m");
+L.marker([25.18245, 57.05929], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_216<br />Depth: 700.0 m");
+L.marker([25.27300, 56.69718], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_218<br />Depth: 152.0 m");
+L.marker([25.20525, 56.71875], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/11/2021 <br />Collective ID: FUJ_219<br />Depth: 200.0 m");
+L.marker([25.32014, 56.97465], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/11/2021<br />Collective ID: FUJ_221<br />Depth: 280.0 m");
+L.marker([25.18514, 57.05845], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/11/2021<br />Collective ID: FUJ_222<br />Depth: 900.0 m");
+L.marker([25.16567, 56.72045], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 27/11/2021<br />Collective ID: FUJ_223<br />Depth: 200.0 m");
+L.marker([25.12465, 56.85433], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_226<br />Depth: 260.0 m");
+L.marker([25.13268, 57.02509], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_227<br />Depth: 415.0 m");
+L.marker([25.32046, 57.07199], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_228<br />Depth: 375.0 m");
+L.marker([25.32109, 57.05201], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 23/11/2018<br />Collective ID: FUJ_229<br />Depth: 310.0 m");
+L.marker([25.17098, 57.00399], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/11/2018<br />Collective ID: FUJ_230<br />Depth: 175.0 m");
+L.marker([25.17698, 56.41694], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2022-09-02 00:00:00<br />Collective ID: FUJ_236<br />Depth: 48.0 m");
+L.marker([25.17578, 56.42133], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/2/2022<br />Collective ID: FUJ_237<br />Depth: 46.0 m");
+L.marker([25.125, 57.0247], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_241<br />Depth: 490.0 m");
+L.marker([25.1304, 57.0525], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_242<br />Depth: 758.0 m");
+L.marker([25.1254, 57.085], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_243<br />Depth: 1062.0 m");
+L.marker([25.1739, 57.0608], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_244<br />Depth: 767.0 m");
+L.marker([25.2373, 57.033], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_246<br />Depth: 534.0 m");
+L.marker([25.2535, 57.0105], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_247<br />Depth: 403.0 m");
+L.marker([25.21706, 57.00047], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_248<br />Depth: 312.0 m");
+L.marker([25.18091, 57.05571], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_249<br />Depth: 714.0 m");
+L.marker([25.303, 56.8737], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_250<br />Depth: 204.0 m");
+L.marker([25.12012, 57.00106], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/3/2022<br />Collective ID: FUJ_252<br />Depth: 296.0 m");
+L.marker([25.12584, 57.0512], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_254<br />Depth: 782.0 m");
+L.marker([25.17012, 57.05865], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_255<br />Depth: 725.0 m");
+L.marker([25.16596, 56.89723], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_256<br />Depth: 264.0 m");
+L.marker([25.21635, 56.95201], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_257<br />Depth: 270.0 m");
+L.marker([25.25748, 56.69896], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_258<br />Depth: 158.0 m");
+L.marker([25.12563, 57.04], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_260<br />Depth: 644.0 m");
+L.marker([25.13739, 57.01398], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_261<br />Depth: 277.0 m");
+L.marker([25.1242, 56.94172], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_262<br />Depth: 203.0 m");
+L.marker([25.17241, 56.93903], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 22/3/2022<br />Collective ID: FUJ_263<br />Depth: 208.0 m");
+L.marker([25.54023, 56.77983], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 23/2/2022<br />Collective ID: FUJ_267<br />Depth: 106.0 m");
+L.marker([25.43846, 56.41239], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 23/2/2022<br />Collective ID: FUJ_268<br />Depth: 59.0 m");
+L.marker([25.21966, 56.49536], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_270<br />Depth: 92.0 m");
+L.marker([25.0943, 57.0298], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_271<br />Depth: 828.0 m");
+L.marker([25.1225, 57.0566], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_272<br />Depth: 845.0 m");
+L.marker([25.10662, 57.04801], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_273<br />Depth: 879.0 m");
+L.marker([25.22919, 56.83538], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_275<br />Depth: 226.0 m");
+L.marker([25.22919, 56.83538], { icon: null }).addTo(newMap).bindPopup("<b>steno bredanensis (rough-toothed dolphin)</b><br />Date: 24/3/2022<br />Collective ID: FUJ_276<br />Depth: 226.0 m");
+L.marker([25.13534, 57.08753], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/3/2022<br />Collective ID: FUJ_277<br />Depth: 1060.0 m");
+L.marker([25.161233, 56.456083], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 2022-05-06 00:00:00<br />Collective ID: FUJ_282<br />Depth: 65.0 m");
+L.marker([25.21843, 56.81306], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/6/2022<br />Collective ID: FUJ_283<br />Depth: nan m");
+L.marker([25.22045, 57.01192], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 21/6/2022<br />Collective ID: FUJ_284<br />Depth: nan m");
+L.marker([25.15913, 56.50232], { icon: null }).addTo(newMap).bindPopup("<b>delphinus delphis tropicalis (indo-pacific common dolphin)</b><br />Date: 24/6/2022<br />Collective ID: FUJ_285<br />Depth: 91.0 m");
+L.marker([25.28185, 56.98856], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_287<br />Depth: 294.0 m");
+L.marker([25.28185, 56.98856], { icon: null }).addTo(newMap).bindPopup("<b>steno bredanensis (rough-toothed dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_288<br />Depth: 294.0 m");
+L.marker([25.32806, 56.96416], { icon: null }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_290<br />Depth: 266.0 m");		
+</script>
+</body>
+</html>
