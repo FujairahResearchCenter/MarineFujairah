@@ -60,13 +60,7 @@ import HelloWorld from "./components/HelloWorld.vue";
         <!-- Quick Links -->
         <div class="flex flex-col gap-1 text-gray-500">
           <h3 class="mb-2 text-xl text-gray-600 font-bold">Quick Links</h3>
-          <a
-            href="https://www.instagram.com/fuj_environment/?hl=en"
-            target="_blank"
-            rel="noreferrer"
-            class="text-sm"
-            >About Fujairah Environment Authority</a
-          >
+
           <a
             href="https://www.frc.ae/about"
             target="_blank"
