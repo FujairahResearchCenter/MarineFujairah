@@ -15,7 +15,7 @@ import HelloWorld from "./components/HelloWorld.vue";
         </router-link>
         <!-- </RouterLink> -->
 
-        <div class="hidden md:block">
+        <div>
           <ul class="flex flex-row gap-4 text-sm">
             <li
               class="py-2 border-b-4 border-white hover:border-b-4 hover:border-green-600 hover:transition hover:ease-in-out duration-300"
