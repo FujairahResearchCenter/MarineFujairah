@@ -1,34 +1,53 @@
+	<!doctype html>
+	<html lang="en">
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Getting Started - Leaflet js Map interactive library</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-</head>
-<body>
-<div id="map" style="width: 1200px; height: 600px;"></div> 
+	<head>
+		<meta charset='utf-8' />
+		<title>
+			Preview
+		</title>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		<!--[if lte IE 8]>
+				<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+			<![endif]-->
+		<style>
+			html {
+				height: 100%
+			}
 
-<script>
-var newMap = L.map('map').setView([25.193689444444444, 56.380330555555556], 9.5);
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-attribution: '&copy; <a href=”http://osm.org/copyright”>OpenStreetMap</a> contributors'
-}).addTo(newMap);
+			#map {
+				height: 100%
+			}
+		</style>
+		<link rel="stylesheet" href="gh-pages.css" />
+	</head>
 
-// ******* OR YOU CAN USE BELOW CODE TO ADD MAPBOX TILE LAYER WITH LEAFLETJS ******
-// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<YOUR_API_TOKEN>', {
-// maxZoom: 18,
-// attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-// '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-// 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-// id: 'mapbox.streets'
-// }).addTo(newMap);
+	<body>
 
-//binding popup event with leaflet marker and map
-//binding popup event with leaflet marker and map	
+		<div id="map"></div>
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+		<script src="catiline.js"></script>
+		<script src="leaflet.shpfile.js"></script>
+		<script>
+		var redIcon = L.icon({
+			iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+			iconSize: [25, 41],
+			iconAnchor: [12, 41],
+			popupAnchor: [1, -34],
+			shadowSize: [41, 41]
+		});
+			var newMap = L.map('map').setView([25,56], 8);
+			var watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
+				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+			}).addTo(newMap);
+			
 L.marker([25.18556, 57.04401], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2016-03-05 00:00:00<br />Collective ID: FUJ_010<br />Depth: 566.0 m");
 L.marker([24.92156, 56.92795], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 26/10/2016<br />Collective ID: FUJ_011<br />Depth: 434.0 m");
 L.marker([25.00041, 56.85802], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 2017-07-03 00:00:00<br />Collective ID: FUJ_012<br />Depth: 286.0 m");
@@ -197,6 +216,18 @@ L.marker([25.15913, 56.50232], { icon: createCustomIcon('green') }).addTo(newMap
 L.marker([25.28185, 56.98856], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_287<br />Depth: 294.0 m");
 L.marker([25.28185, 56.98856], { icon: createCustomIcon('violet') }).addTo(newMap).bindPopup("<b>steno bredanensis (rough-toothed dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_288<br />Depth: 294.0 m");
 L.marker([25.32806, 56.96416], { icon: createCustomIcon('orange') }).addTo(newMap).bindPopup("<b>tursiops truncatus (common bottlenose dolphin)</b><br />Date: 25/6/2022<br />Collective ID: FUJ_290<br />Depth: 266.0 m");		
-</script>
-</body>
-</html>
+function createCustomIcon(color) {
+			return L.icon({
+				iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-' + color + '.png',
+				shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+				iconSize: [25, 41],
+				iconAnchor: [12, 41],
+				popupAnchor: [1, -34],
+				shadowSize: [41, 41]
+			});
+		}
+			
+		</script>
+	</body>
+
+	</html>
