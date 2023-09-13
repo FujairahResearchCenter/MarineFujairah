@@ -137,13 +137,7 @@ import HelloWorld from "./components/HelloWorld.vue";
       </nav>
 
       <div class="py-4 mx-4 lg:mx-0 flex flex-row justify-between items-center">
-        <a
-          href="https://fujairah.ae/en/pages/fujairah_government.aspx"
-          target="_blank"
-          rel="noreferrer"
-          class="text-sm"
-          ><img class="h-12" src="/images/fea.png"
-        /></a>
+
         <a
           href="https://www.frc.ae/"
           target="_blank"
